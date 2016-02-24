@@ -18,10 +18,7 @@ before_script:
   - mkdir -p shippable/testresults
   - mkdir -p shippable/codecoverage
   - mysql -e 'create database test1;'
-  - /etc/init.d/xvfb start 
+  - xvfb-run --server-args="-ac" npm test
 
 script:
   - python manage.py test
-
-after_script:
-  - /etc/init.d/xvfb stop
