@@ -1,10 +1,10 @@
 language: python
-
+build_image: drydock/u12pytpls:prod
 python:
   - 2.7
-addons:
-  firefox: "28.0"
+
 services:
+  - firefox
   - selenium
 
 env:
